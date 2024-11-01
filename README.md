@@ -37,15 +37,13 @@ Este sistema é ideal para:
 
 - **Backend**: PHP puro
 - **Frontend**: 
-  - **Bootstrap**: Para um design moderno e responsivo
-  - **Vue.js**: Para uma interface interativa e dinâmica
+  - **tailwind**: Para um design moderno e responsivo
 
 ## 📦 Dependências
 
 - **PHP**: Servidor web (ex: Apache ou Nginx)
 - **MySQL**: Banco de dados para armazenar informações sobre hotéis e avaliações
-- **Bootstrap**: Para estilos e layout responsivo
-- **Vue.js**: Para componentes dinâmicos e reatividade da interface
+- **tailwind**: Para estilos e layout responsivo
 
 ## 📋 Documentação Inicial
 
