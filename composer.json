@@ -1,0 +1,6 @@
+{
+    "name": "laboratorio/hotel-sys",
+    "require-dev": {
+        "phpunit/phpunit": "^11.4"
+    }
+}
