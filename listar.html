@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hotéis Cadastrados</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+      }
+
+      .container {
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 800px;
+        width: 100%;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+        font-size: 24px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid #ddd;
+      }
+
+      th,
+      td {
+        padding: 12px;
+        text-align: left;
+        font-size: 14px;
+      }
+
+      th {
+        background-color: #007bff;
+        color: white;
+      }
+
+      tbody tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      .message {
+        text-align: center;
+        font-size: 14px;
+        color: green;
+        margin-top: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Hotéis Cadastrados</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Endereço</th>
+            <th>Avaliação</th>
+            <th>Preço por Noite</th>
+            <th>Cidade</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody id="hoteisTable">
+          <!-- As informações dos hotéis serão inseridas aqui -->
+        </tbody>
+      </table>
+      <div class="message" id="noHotelsMessage">Nenhum hotel cadastrado.</div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const hoteisTable = document.getElementById("hoteisTable");
+        const noHotelsMessage = document.getElementById("noHotelsMessage");
+
+        // Função para carregar e listar todos os hotéis
+        function carregarHoteis() {
+          fetch("seu_script.php", {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              if (data.length > 0) {
+                hoteisTable.innerHTML = "";
+                data.forEach((hotel) => {
+                  const row = `<tr>
+                              <td>${hotel.nome}</td>
+                              <td>${hotel.endereco}</td>
+                              <td>${hotel.avaliacao}</td>
+                              <td>R$ ${hotel.preco_por_noite.toFixed(2)}</td>
+                              <td>${hotel.cidade}</td>
+                              <td>${hotel.estado}</td>
+                            </tr>`;
+                  hoteisTable.insertAdjacentHTML("beforeend", row);
+                });
+                noHotelsMessage.style.display = "none";
+              } else {
+                noHotelsMessage.style.display = "block";
+              }
+            })
+            .catch((error) => console.error("Erro ao carregar hotéis:", error));
+        }
+
+        // Carrega hotéis ao abrir a página
+        carregarHoteis();
+      });
+    </script>
+  </body>
+</html>

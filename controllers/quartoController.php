@@ -1,7 +1,7 @@
 <?php
 include 'QuartoDAO.php';
 
-// Lógica para cadastrar um novo quarto
+// cadastra um novo quarto
 function cadastrarQuarto($data) {
     if (isset($data['hotel_id'], $data['tipo_quarto'], $data['capacidade'], $data['preco'])) {
         createQuarto($data['hotel_id'], $data['tipo_quarto'], $data['capacidade'], $data['preco']);
@@ -11,12 +11,12 @@ function cadastrarQuarto($data) {
     }
 }
 
-// Lógica para listar todos os quartos
+// listar todos os quartos
 function listarQuartos() {
     return getAllQuartos();
 }
 
-// Lógica para atualizar um quarto
+// atualizar um quarto
 function atualizarQuarto($id, $data) {
     if (isset($data['hotel_id'], $data['tipo_quarto'], $data['capacidade'], $data['preco'])) {
         updateQuarto($id, $data['hotel_id'], $data['tipo_quarto'], $data['capacidade'], $data['preco']);
@@ -26,7 +26,7 @@ function atualizarQuarto($id, $data) {
     }
 }
 
-// Lógica para excluir um quarto
+// excluir um quarto
 function excluirQuarto($id) {
     deleteQuarto($id);
     return ["status" => "success", "message" => "Quarto excluído com sucesso!"];

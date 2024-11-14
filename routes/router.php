@@ -1,5 +1,4 @@
 <?php
-
 $routes = [];
 
 function route($path, $callback) {
@@ -9,10 +8,10 @@ function route($path, $callback) {
 
 function dispatch($requestedPath) {
     global $routes;
-
     if (array_key_exists($requestedPath, $routes)) {
-        $routes[$requestedPath](); 
+        $routes[$requestedPath]();
     } else {
-        echo "404 - Página não encontrada";
+        http_response_code(404);
+        echo "404 - Rota não encontrada!";
     }
 }

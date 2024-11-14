@@ -2,17 +2,19 @@
 require 'routes/router.php';
 
 route('/', function() {
-    echo "index!";
+    include 'listar.html';
 });
 
-route('/exemplo1', function() {
-    echo "exemplo1";
+route('/cadastro', function() {
+    include 'cadastro.html';
 });
 
-route('/exemplo2', function() {
-    echo "Exemplo2";
+route('/cadastro-quarto', function() {
+    include 'cadastroQuarto.html';
 });
 
+// Pega o caminho da URL
 $requestedPath = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
+// Executa o roteamento
 dispatch($requestedPath);
