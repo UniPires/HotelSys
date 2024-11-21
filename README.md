@@ -1,62 +1,41 @@
-# 🌐 Sistema de Busca de Hotéis
+# HotelSys
 
-Bem-vindo ao projeto **Sistema de Busca de Hotéis**! Este é um sistema intuitivo que permite aos usuários encontrar e comparar opções de hospedagem de forma simples e eficaz.
+**HotelSys** é um sistema simples de gerenciamento de hotéis e quartos, desenvolvido em PHP com PostgreSQL. Ele permite realizar operações de CRUD para hotéis e quartos, com suporte a rotas dinâmicas e uma interface para listar e gerenciar os dados.
 
-## 📖 Descrição da Ideia
+---
 
-O Sistema de Busca de Hotéis é uma plataforma onde os usuários podem pesquisar hotéis com base em suas preferências, como localização, datas de estadia e número de hóspedes. O objetivo é proporcionar uma experiência de reserva mais agradável e eficiente.
+## Funcionalidades
 
-## 🚀 Proposta
+- **Hotéis**:
 
-Este sistema visa facilitar a busca de hospedagem, apresentando informações detalhadas sobre os hotéis, incluindo:
+  - Listar todos os hotéis cadastrados.
+  - Adicionar novos hotéis.
+  - Editar e excluir hotéis existentes.
+  - Visualizar detalhes de um hotel específico.
 
-- **Fotos**
-- **Descrições**
-- **Preços**
-- **Comodidades**
-- **Avaliações de Usuários**
+- **Quartos**:
 
-## 🔑 Recursos Principais
+  - Listar quartos de um hotel específico.
+  - Adicionar, editar e excluir quartos.
 
-- **Busca de Hotéis**: Pesquise hotéis por cidade, datas e número de hóspedes.
-- **Filtros de Pesquisa**: Filtre resultados por faixa de preço, estrelas e comodidades (Wi-Fi, estacionamento, piscina, etc.).
-- **Detalhes do Hotel**: Visualize informações detalhadas sobre cada hotel.
-- **Sistema de Avaliação**: Deixe avaliações e comentários sobre as experiências nos hotéis.
-- **Interface Responsiva**: Design que funciona bem em dispositivos móveis e desktops.
+- **Rotas Dinâmicas**:
+  - Sistema de roteamento customizado para gerenciar as URLs.
 
-## 🎯 Público-Alvo
+---
 
-Este sistema é ideal para:
+## Pré-requisitos
 
-- Viajantes em busca de hospedagem
-- Famílias
-- Grupos de amigos
-- Viajantes a negócios
+- **PHP 8.x** ou superior.
+- **PostgreSQL 13** ou superior.
+- **Composer** (para autoload das dependências).
+- Servidor PHP embutido ou Apache/Nginx configurado.
 
-## ⚙️ Tecnologias Utilizadas
+---
 
-- **Backend**: PHP puro
-- **Frontend**: 
-  - **tailwind**: Para um design moderno e responsivo
+## Instalação
 
-## 📦 Dependências
-
-- **PHP**: Servidor web (ex: Apache ou Nginx)
-- **MySQL**: Banco de dados para armazenar informações sobre hotéis e avaliações
-- **tailwind**: Para estilos e layout responsivo
-
-## 📋 Documentação Inicial
-
-1. **Configuração do Ambiente**:
-   - Instale o PHP e um servidor web (Apache ou Nginx).
-   - Configure o banco de dados MySQL.
-
-2. **Estrutura do Banco de Dados**:
-   - Tabelas: `hotels`, `users`, `reviews`.
-   - Estruturas básicas de cada tabela.
-
-3. **Instruções de Uso**:
-   - Como rodar o servidor localmente.
-   - Acesso ao sistema e funcionalidades disponíveis.
-
-
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/seu-usuario/HotelSys.git
+   cd HotelSys
+   ```

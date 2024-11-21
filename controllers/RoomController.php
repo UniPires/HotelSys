@@ -6,7 +6,8 @@ class RoomController {
         $query = $pdo->prepare("SELECT * FROM rooms WHERE hotel_id = ?");
         $query->execute([$hotel_id]);
         $rooms = $query->fetchAll(PDO::FETCH_ASSOC);
-        include 'views/rooms/index.php'; // Exibe a lista de quartos
+
+        include 'views/rooms/index.php'; // Exibe os quartos do hotel
     }
 
     // Exibir formulário para adicionar um novo quarto
